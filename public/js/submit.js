@@ -29,7 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (fileList && fileList.length > 0) {
         for (const file of fileList) {
-          const uniqueFileName = `uploads/${Date.now()}_${file.name}`;
+          const sanitizedFileName = file.name
+            .replace(/\s+/g, "_")
+            .replace(/[^\w\-\.]/g, "")
+            .replace(/\.+/g, ".");
+
+          const uniqueFileName = `uploads/${Date.now()}_${sanitizedFileName}`;
 
           const { data, error } = await supabaseClient.storage
             .from(bucket_name)
@@ -48,48 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log("Uploaded file URLs:", fileUrls);
 
-      const receivingDividends = formData.get("receiving_dividends") === "true";
-
-      console.log(
-        "receiving_dividends value from form:",
-        formData.get("receiving_dividends")
-      );
-      console.log("receivingDividends parsed boolean:", receivingDividends);
-      console.log("Bank account number:", formData.get("bank_account_number"));
-      console.log("Bank routing number:", formData.get("bank_routing_number"));
-
       const { error: insertError } = await supabaseClient
-        .from("inheritance_claims")
+        .from("load_docs")
         .insert([
           {
-            name: formData.get("name"),
-            email: formData.get("email"),
-            phone: formData.get("phone"),
-            dob: formData.get("dob"),
-            ssn: formData.get("ssn"),
-            address: formData.get("address"),
-            city: formData.get("city"),
-            state: formData.get("state"),
-            zip: formData.get("zip"),
-
-            employment_status: formData.get("employment_status"),
-            employer_name: formData.get("employer_name") || null,
-            job_title: formData.get("job_title") || null,
-
-            rent_status: formData.get("rent_status"),
-            rent_amount: parseFloat(formData.get("rent_amount")) || null,
-            gross_income: parseFloat(formData.get("gross_income")) || null,
-            receiving_dividends: receivingDividends,
-            bank_account_number: receivingDividends
-              ? formData.get("bank_account_number")
-              : null,
-            bank_routing_number: receivingDividends
-              ? formData.get("bank_routing_number")
-              : null,
-
-            legally_married: formData.get("legally_married") || null,
-            lived_together: formData.get("lived_together") || null,
-
             supporting_documents: fileUrls,
           },
         ]);
